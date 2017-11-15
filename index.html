@@ -118,17 +118,35 @@
         <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
           <p>
             <label for="date-arrival">Дата заезда: </label>
-            <input class="search-form-date" id="date-arrival" type="date" name="arrival">
-          </p>
+            <input class="search-form-date" id="date-arrival" type="date" name="arrival" value="24 апреля 2017">
+            <button class="form-calendar" type="button">
+              <span class="visually-hidden">Календарь</span>
+            </button>
+          </p> 
           <p>
             <label for="date-departure">Дата заезда: </label>
-            <input class="search-form-date" id="date-departure" type="date" name="departure">
+            <input class="search-form-date" id="date-departure" type="date" name="departure" value="4 июля 2017">
+            <button class="form-calendar" type="button">
+              <span class="visually-hidden">Календарь</span>
+            </button>
           </p>
           <p>
-            <label for="persons-adults">Взрослые: </label>          
-            <input class="search-form-persons" id="persons-adults" type="number" name="adults">
+            <label for="persons-adults">Взрослые: </label>
+            <button class="form-persons-plus" type="button">
+              <span class="visually-hidden">Плюс</span>
+            </button>  
+            <input class="search-form-persons" id="persons-adults" type="number" name="adults" value="2">
+            <button class="form-persons-minus" type="button">
+              <span class="visually-hidden">Минус</span>
+            </button>
             <label for="persons-kids">Дети: </label>
-            <input class="search-form-persons" id="persons-kids" type="number" name="kids">
+            <button class="form-persons-plus" type="button">
+              <span class="visually-hidden">Плюс</span>
+            </button> 
+            <input class="search-form-persons" id="persons-kids" type="number" name="kids" value="0">
+            <button class="form-persons-minus" type="button">
+              <span class="visually-hidden">Минус</span>
+            </button>
           </p>
           <button class="btn btn-search-form" type="submit">Найти</button>
         </form>
@@ -137,9 +155,21 @@
           <p class="hashtag">#visitsedona</p>
           <div class="footer-social">
             <ul class="social-list">
-              <li><a class="social-button" href="#">Твитер</a></li>
-              <li><a class="social-button" href="#">Фейсбук</a></li>
-              <li><a class="social-button" href="#">Ютюб</a></li>
+              <li>
+                <a class="social-button" href="#">
+                  <span class="visually-hidden">Твитер</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-button" href="#">
+                  <span class="visually-hidden">Фейсбук</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-button" href="#">
+                  <span class="visually-hidden">Ютюб</span>
+                </a>
+              </li>
             </ul>
           </div>
           <div class="footer-copyright">

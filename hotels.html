@@ -26,7 +26,7 @@
           <h2 class="visually-hidden">Фильтр товаров</h2>
           <form class="filter-form" method="get" action="https://echo.htmlacademy.ru">
             <fieldset class="filter-form-infrastructure">
-              <legend>Инфраструктура:</legend>
+              <legend class="infrastructure-header">Инфраструктура:</legend>
               <ul>
                 <li class="filter-form-option">
                   <input class="visually-hidden" type="checkbox" name="pool" id="filter-pool" checked>
@@ -43,7 +43,7 @@
               </ul>
             </fieldset>
             <fieldset class="filter-form-housing">
-              <legend>Тип жилья:</legend>
+              <legend class="housing-header">Тип жилья:</legend>
               <ul>
                 <li class="filter-form-option">
                   <input class="visually-hidden" type="checkbox" name="hotel" id="filter-hotel" checked>
@@ -60,7 +60,7 @@
               </ul>
             </fieldset>
             <fieldset class="filter-form-cost">
-              <legend>Стоимость в сутки (Р):</legend>
+              <legend class="cost-header">Стоимость в сутки (Р):</legend>
               <div class="scale"> 
                 <div class="diapason"></div> 
                 <div class="toggle toggle-min"></div> 
@@ -90,8 +90,12 @@
             </ul>
           </div>
           <div class="arrows">
-            <a href="#" class="arrow arrow-up">По возрастанию</a>
-            <a href="#" class="arrow arrow-down">По убыванию</a>
+            <a href="#" class="arrow arrow-up">
+              <span class="visually-hidden">По возрастанию</span>
+            </a>
+            <a href="#" class="arrow arrow-down">
+              <span class="visually-hidden">По убыванию</span>
+            </a>
           </div>
         </div>
 
@@ -115,7 +119,9 @@
               </div>
               
               <div class="result-item-rating">
-                <div class="result-item-stars"></div>
+                <div class="result-item-stars">
+                  <span class="visually-hidden">4 звезды</span>
+                </div>
                 <p class="result-item-rate">Рейтинг: 8,5</p>
               </div>
             </li>
@@ -136,7 +142,9 @@
               </div>
               
               <div class="result-item-rating">
-                <div class="result-item-stars"></div>
+                <div class="result-item-stars">
+                  <span class="visually-hidden">3 звезды</span>
+                </div>
                 <p class="result-item-rate">Рейтинг: 8,9</p>
               </div>
             </li>
@@ -157,7 +165,9 @@
               </div>
               
               <div class="result-item-rating">
-                <div class="result-item-stars"></div>
+                <div class="result-item-stars">
+                  <span class="visually-hidden">2 звезды</span>
+                </div>
                 <p class="result-item-rate">Рейтинг: 9,2</p>
               </div>
             </li>
@@ -169,10 +179,22 @@
         <p class="hashtag">#visitsedona</p>
         <div class="footer-social">
           <ul class="social-list">
-            <li><a class="social-button" href="#">Твитер</a></li>
-            <li><a class="social-button" href="#">Фейсбук</a></li>
-            <li><a class="social-button" href="#">Ютюб</a></li>
-          </ul>
+              <li>
+                <a class="social-button" href="#">
+                  <span class="visually-hidden">Твитер</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-button" href="#">
+                  <span class="visually-hidden">Фейсбук</span>
+                </a>
+              </li>
+              <li>
+                <a class="social-button" href="#">
+                  <span class="visually-hidden">Ютюб</span>
+                </a>
+              </li>
+            </ul>
         </div>
         <div class="footer-copyright">
           <span>Website by</span>
