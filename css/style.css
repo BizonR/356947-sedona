@@ -253,6 +253,8 @@ a {
   font-weight: 400;
 }
 
-.footer-copyright img {
-  color: red;
+/*Стилизация страницы поиска отелей*/
+
+.site-navigation-current {
+  color: #766357;
 }
