@@ -204,8 +204,7 @@ a {
 }
 
 .form-calendar,
-.form-persons-minus,
-.form-persons-plus {
+.form-persons-change {
   font: inherit;
   color: #cacaca;
   
@@ -214,14 +213,12 @@ a {
 }
 
 .form-calendar:hover,
-.form-persons-minus:hover,
-.form-persons-plus:hover {
+.form-persons-change:hover {
   color: #000000;
 }
 
 .form-calendar:active,
-.form-persons-minus:active,
-.form-persons-plus:active {
+.form-persons-change:active {
   color: #81b3d2;
 }
 
@@ -319,7 +316,7 @@ a {
   font-size: 12px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px dashed #81b3d2;
+  border-bottom: 1px dotted #81b3d2;
 }
 
 .sorting-list .active {
