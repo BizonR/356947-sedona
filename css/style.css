@@ -12,6 +12,9 @@ body {
 }
 
 .container {
+  width: 1200px;
+  margin: 0 auto;
+  
   background-color: #ffffff;
   box-shadow: 0 0 15px 4px #dbdbdb;
 }
@@ -34,6 +37,8 @@ a {
 }
 
 .main-header {
+  position: relative;
+  
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
@@ -42,8 +47,37 @@ a {
   background-color: #ffffff;
 }
 
+.main-header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .site-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  padding-left: 6%;
+  padding-right: 6%;
+  
   list-style: none;
+}
+
+.site-navigation li {
+  width: 20%;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.site-navigation li:nth-child(1), 
+.site-navigation li:nth-child(2) {
+  text-align: left;
+}
+
+.site-navigation li:nth-child(3), 
+.site-navigation li:nth-child(4) {
+  text-align: right;
 }
 
 .site-navigation a {
@@ -60,16 +94,32 @@ a {
 }
 
 .intro {
+  margin-bottom: 62px;
+  
   background-image: url("../img/background.jpg");
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 }
 
+.intro img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 76px;
+  margin-bottom: 80px;
+}
+
 .promo {
+  margin-bottom: 51px;
+  
   text-align: center;
 }
 
 .main-title {
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 33px;
+  
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -83,20 +133,34 @@ a {
 }
 
 .features-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  
   list-style: none;
   text-align: center;
 }  
 
 .features-item {
+  width: 400px;
+  
   color: #ffffff;
   
   background-color: #81b3d2;  
 }
 
 .features-title {
+  margin-top: 47px;
+  margin-bottom: 28px;
+  
   font-size: 21px;
   line-height: 1.2;
   font-weight: 700;
+}
+
+.features-number {
+  margin-bottom: 28px;
 }
 
 .features-item-light {
@@ -124,6 +188,8 @@ a {
 }
 
 .offer-title {
+  padding-top: 55px;
+  
   text-align: center;
 }
 
@@ -223,12 +289,17 @@ a {
 }
 
 .index-footer-wrapper {
+  display: flex;
+  align-items: center;
+  
   text-align: center;
   
   background-color: rgba(255, 255, 255, 0.9);
 }
 
 .hashtag {
+  width: 400px;
+  
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -236,15 +307,20 @@ a {
 }
 
 .footer-social {
-  text-align: center;
+  width: 400px;
 }
 
 .social-list {
   list-style: none;
+  padding: 0;
 }
 
 .social-button {
   color: #81b3d2;
+}
+
+.footer-copyright {
+  width: 400px;
 }
 
 .footer-copyright span {
