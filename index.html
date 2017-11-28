@@ -16,8 +16,8 @@
         <nav class="main-navigation">
           <ul class="site-navigation">
             <li><a href="info.html">Информация</a></li>
-            <li><a href="media.html">Фото и видео</a></li>
-            <li><a href="map.html">Карта штата</a></li>
+            <li class="shift-right"><a href="media.html">Фото и видео</a></li>
+            <li class="shift-left"><a href="map.html">Карта штата</a></li>
             <li><a href="hotels.html">Гостиницы</a></li>
           </ul>
         </nav>
@@ -127,36 +127,41 @@
         </div>
         
         <form class="search-form" action="https://echo.htmlacademy.ru" method="get">
-          <p>
+          <p class="date-block">
             <label for="date-arrival">Дата заезда: </label>
-            <input class="search-form-date" id="date-arrival" type="date" name="arrival" value="24 апреля 2017">
+            <input class="search-form-date" id="date-arrival" type="text" name="arrival" value="24 апреля 2017">
             <button class="form-calendar" type="button">
               <span class="visually-hidden">Календарь</span>
             </button>
           </p> 
-          <p>
+          
+          <p class="date-block">
             <label for="date-departure">Дата заезда: </label>
-            <input class="search-form-date" id="date-departure" type="date" name="departure" value="4 июля 2017">
+            <input class="search-form-date" id="date-departure" type="text" name="departure" value="4 июля 2017">
             <button class="form-calendar" type="button">
               <span class="visually-hidden">Календарь</span>
             </button>
           </p>
-          <p>
+          
+          <p class="persons-block">
             <label for="persons-adults">Взрослые: </label>
-            <button class="form-persons-change icon-plus" type="button">
-              <span class="visually-hidden">Плюс</span>
-            </button>  
-            <input class="search-form-persons" id="persons-adults" type="number" name="adults" value="2">
             <button class="form-persons-change icon-minus" type="button">
               <span class="visually-hidden">Минус</span>
             </button>
-            <label for="persons-kids">Дети: </label>
+            <input class="search-form-persons" id="persons-adults" type="text" name="adults" value="2">
             <button class="form-persons-change icon-plus" type="button">
               <span class="visually-hidden">Плюс</span>
-            </button> 
-            <input class="search-form-persons" id="persons-kids" type="number" name="kids" value="0">
+            </button>
+          </p>
+            
+          <p class="persons-block">
+            <label for="persons-kids">Дети: </label>
             <button class="form-persons-change icon-minus" type="button">
               <span class="visually-hidden">Минус</span>
+            </button>
+            <input class="search-form-persons" id="persons-kids" type="text" name="kids" value="0">
+            <button class="form-persons-change icon-plus" type="button">
+              <span class="visually-hidden">Плюс</span>
             </button>
           </p>
           <button class="btn btn-search-form" type="submit">Найти</button>
