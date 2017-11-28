@@ -65,6 +65,7 @@ a {
 
 .main-header-logo {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -112,26 +113,46 @@ a {
 }
 
 .intro {
+  position: relative;
+  
   background-image: url("../img/background.jpg");
-  background-position: top;
+  background-color: #d9eaf2;
+  background-position: 50% 21%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.intro::after {
+  content: "";
+  display: block;
+  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 57px;
+  
+  background-image: url("../img/intro-bg.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .intro img {
   display: block;
   margin: 0 auto;
-  margin-top: 76px;
+  padding-top: 76px;
+  padding-bottom: 80px;
 }
 
 .promo {
   margin-bottom: 51px;
-  padding-top: 62px;
+  margin-top: 62px;
   
   text-align: center;
 }
 
-.main-title {
+.promo .main-title {
   width: 450px;
   margin: 0 auto;
   margin-bottom: 33px;
@@ -172,17 +193,24 @@ a {
   background-color: #81b3d2;  
 }
 
-.features-title {
-  margin-top: 47px;
-  margin-bottom: 28px;
+.features-item .features-title {
+  margin: 47px auto 24px auto;
+  width: 160px;
   
   font-size: 21px;
   line-height: 1.2;
   font-weight: 700;
 }
 
+.features-item .features-description {
+  margin: 0;
+  padding: 0;
+}
+
 .features-item .features-number {
-  margin-bottom: 28px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 26px;
 }
 
 .features-image {
@@ -193,11 +221,60 @@ a {
 }
 
 .features-item-light {
+  min-height: 330px;
   background-color: #ffffff;
 }
 
 .features-item-light .features-title {
+  position: relative;
+  margin-top: 161px;
+  
   color: #000000;
+}
+
+.features-item-light .features-title-house::before {
+  content: "";
+  
+  position: absolute;
+  bottom: 54px;
+  left: 42px;
+  
+  width: 75px;
+  height: 72px;
+  
+  background-image: url("../img/icon-1.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.features-item-light .features-title-food::before {
+  content: "";
+  
+  position: absolute;
+  bottom: 54px;
+  left: 43px;
+  
+  width: 74px;
+  height: 70px;
+  
+  background-image: url("../img/icon-2.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.features-item-light .features-title-souvenir::before {
+  content: "";
+  
+  position: absolute;
+  bottom: 54px;
+  left: 48px;
+  
+  width: 64px;
+  height: 76px;
+  
+  background-image: url("../img/icon-3.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .features-item-light p {
@@ -205,6 +282,7 @@ a {
 }
 
 .features-item-gray {
+  min-height: 256px;
   padding: 0 69px;
   
   background-color: #eeeeee;
@@ -233,13 +311,17 @@ a {
 
 .offer p {
   width: 575px;
-  margin: 33px auto 49px auto;
+  margin: 28px auto 50px auto;
   
   font-size: 14px;
   line-height: 24px;
 }
 
 .btn-search {
+  box-sizing: border-box;
+  width: 568px;
+  padding: 30px 50px;
+  
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -264,9 +346,12 @@ a {
 }
 
 .search-form {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  
   box-sizing: border-box;
   top: 0;
-  left: 50%;
   width: 568px;
   margin-left: 316px;
   padding: 55px;
@@ -274,9 +359,16 @@ a {
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
+  
+  background-color: #ffffff;
 }
 
-.search-form input {
+.search-form label {
+  width: 100px;
+  padding-right: 12px;
+}
+
+.search-form input {  
   font: inherit;
   text-transform: uppercase;
   
@@ -294,7 +386,18 @@ a {
   outline: none;
 }
 
+.form-calendar {
+  padding: 0;
+}
+
+.form-persons-change {
+  padding: 0;
+}
+
 .btn-search-form {
+  width: 100%;
+  padding: 17px 0;
+  
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -304,7 +407,8 @@ a {
   border: none;
 }
 
-.btn-search-form:hover {
+.btn-search-form:hover,
+.btn-search-form:focus {
   background-color: #669ec0;
 }
 
@@ -343,7 +447,15 @@ a {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
+.index-footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;  
+}
+
 .hashtag {
+  margin: 0;
+  padding: 0;
   width: 400px;
   
   font-size: 21px;
@@ -354,30 +466,114 @@ a {
 
 .footer-social {
   width: 400px;
+  margin: 36px 0;
 }
 
 .social-list {
   display: flex;
-/*
-  дисплей флекс
-но тут подумай тебе надо добиться такого поведения чтобы при переполнении между ними всегда было расстояние и когда элементов много они переносились на другую строку
-*/
-  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  margin: 0;
   padding: 0;
+
+  list-style: none;
+  
 }
 
 .social-button {
+  display: block;
+  position: relative;
+  
+  margin: 3px;
+  width: 46px;
+  height: 48px;
+  
   color: #81b3d2;
+  
+  background-color: #81b3d2;
+}
+
+.social-button:hover,
+.social-button:focus {
+  background-color: #669ec0;
+}
+
+.social-button:active::before {
+  opacity: 0.3;
+}
+
+.icon-twitter::before {
+  content: "";
+  display: inline-block;
+  
+  position: absolute;
+  top: 17px;
+  left: 15px;
+  
+  width: 17px;
+  height: 15px;
+  
+  background-image: url(../img/twitter.svg);
+  background-repeat: no-repeat;
+}
+
+.icon-facebook::before {
+  content: "";
+  display: inline-block;
+  
+  position: absolute;
+  top: 13px;
+  left: 17px;
+  
+  width: 12px;
+  height: 22px;
+  
+  background-image: url(../img/fb-icon.svg);
+  background-repeat: no-repeat;
+}
+
+.icon-youtube::before {
+  content: "";
+  display: inline-block;
+  
+  position: absolute;
+  top: 16px;
+  left: 13px;
+  
+  width: 20px;
+  height: 16px;
+  
+  background-image: url(../img/youtube.svg);
+  background-repeat: no-repeat;
 }
 
 .footer-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 400px;
 }
 
 .footer-copyright span {
+  margin-right: 8px;
+  
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
+}
+
+.icon-academy {
+  line-height: 0;
+}
+
+.icon-academy:hover path,
+.icon-academy:focus path {
+  fill: #81b3d2;
+}
+
+.icon-academy:active path {
+  fill: #bdbbbc;
 }
 
 /*Стилизация страницы поиска отелей*/
@@ -444,10 +640,14 @@ a {
 
 .sorting {
   display: flex;
+  align-items: center;
   padding: 0 6%;
 }
 
 .sorting-caption {
+  margin: 31px 0;
+  padding-right: 50px;
+  
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -455,6 +655,7 @@ a {
 
 .sorting-by {
   display: flex;
+  align-items: baseline;
 }
 
 .sorting-by-caption {
@@ -468,9 +669,14 @@ a {
 
 .sorting-list {
   display: flex;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.sorting-list li {
+  margin-left: 33px;
 }
 
 .sorting-list a {
@@ -485,7 +691,8 @@ a {
   border: none;
 }
 
-.sorting-list a:hover {
+.sorting-list a:hover,
+.sorting-list a:focus {
   color: #81b3d2;
 }
 
@@ -494,8 +701,29 @@ a {
   border: none;
 }
 
-.arrows {
+.arrows {  
   margin-left: auto;
+}
+
+.arrow {
+  font-size: 0;
+  line-height: 0;
+}
+
+.arrow-up {
+  margin-right: 12px;
+}
+
+.arrow-down:hover path,
+.arrow-up:hover path,
+.arrow-down:focus path,
+.arrow-up:focus path {
+  fill: #231f20;
+}
+
+.arrow-down:active path,
+.arrow-up:active path {
+  fill: #81b3d2;
 }
 
 .result-list {
@@ -505,6 +733,7 @@ a {
 
 .result-item {
   display: flex;
+  align-items: flex-end;
   padding: 30px 6%;
   
   list-style: none;
@@ -513,10 +742,12 @@ a {
 
 .result-item-image {
   margin-right: 30px;
+  
+  line-height: 0;
 }
 
 .result-item-info {
-  width: 20%;
+  width: 259px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -539,13 +770,17 @@ a {
 
 .result-item-text {
   width: 50%;
+  margin: 0;
   padding-right: 10px;
   box-sizing: border-box;
   color: #333333;
 }
 
 .btn-more {
+  padding: 6px 17px;
   margin-right: 6px;
+  margin-top: 16px;
+  
   font-size: 14px;
   line-height: 21px;
   font-weight: 700;
@@ -554,7 +789,8 @@ a {
   background-color: #81b3d2;
 }
 
-.btn-more:hover {
+.btn-more:hover,
+.btn-more:focus {
   background-color: #669ec0;
 }
 
@@ -565,6 +801,10 @@ a {
 }
 
 .btn-book {
+  padding: 6px 17px;
+  margin-top: 16px;
+
+  
   font-size: 14px;
   line-height: 21px;
   font-weight: 700;
@@ -573,7 +813,8 @@ a {
   background-color: #766357;
 }
 
-.btn-book:hover {
+.btn-book:hover,
+.btn-book:focus {
   background-color: #604e43;
 }
 
@@ -588,6 +829,9 @@ a {
 }
 
 .result-item-rate {
+  margin: 0;
+  padding: 5px 15px;
+  
   color: #666666;
   
   background-color: #f2f2f2;
