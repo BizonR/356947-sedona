@@ -1140,25 +1140,7 @@ input[type="checkbox"] {
 }
 
 .result-item-rating {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 90px;
   margin-left: auto;
-}
-
-.result-item-stars {
-  width: 23px;
-  height: 17px;
-  margin-left: auto;
-  margin-right: 5px;
-  
-  background-image: url(../img/star.svg);
-  background-repeat: repeat;
-}
-
-.two-stars {
-  
 }
 
 .result-item-rate {
