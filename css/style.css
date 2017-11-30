@@ -83,7 +83,7 @@ input[type="checkbox"] {
 
 .site-navigation li {
   width: 20%;
-  padding: 16px 0;
+  padding: 15px 0;
 }
 
 .site-navigation li:nth-child(2) {
@@ -101,13 +101,11 @@ input[type="checkbox"] {
 }
 
 .shift-right {
-/*  box-sizing: border-box;*/
   margin-left: 60px;
 }
 
 .shift-left {
-/*  box-sizing: border-box;*/
-  margin-right: 60px;
+  margin-right: 63px;
 }
 
 .site-navigation a {
@@ -135,7 +133,6 @@ input[type="checkbox"] {
 
 .intro::after {
   content: "";
-  display: block;
   
   position: absolute;
   bottom: 0;
@@ -146,7 +143,6 @@ input[type="checkbox"] {
   
   background-image: url("../img/intro-bg.png");
   background-repeat: no-repeat;
-  background-position: 0 0;
 }
 
 .intro img {
@@ -197,7 +193,7 @@ input[type="checkbox"] {
 .features-item {
   box-sizing: border-box;
   width: 400px;
-  padding: 0 49px;
+  padding: 0 49px 40px;
   
   color: #ffffff;
   
@@ -205,34 +201,41 @@ input[type="checkbox"] {
 }
 
 .features-item .features-title {
-  margin: 47px auto 24px auto;
+  margin: 47px auto 24px;
   width: 160px;
   
   font-size: 21px;
-  line-height: 1.2;
+  line-height: 21px;
   font-weight: 700;
 }
 
-.features-item .features-description {
+.features-description {
   margin: 0;
   padding: 0;
 }
 
-.features-item .features-number {
+.features-number {
   margin: 0;
   padding: 0;
-  margin-bottom: 26px;
+  margin-bottom: 23px;
 }
 
 .features-image {
   display: flex;
   align-items: center;
-  height: 255px;
+  height: 256px;
   overflow: hidden;
+}
+
+.features-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .features-item-light {
   min-height: 330px;
+  padding-bottom: 49px;
   background-color: #ffffff;
 }
 
@@ -247,7 +250,7 @@ input[type="checkbox"] {
   content: "";
   
   position: absolute;
-  bottom: 54px;
+  bottom: 50px;
   left: 42px;
   
   width: 75px;
@@ -262,7 +265,7 @@ input[type="checkbox"] {
   content: "";
   
   position: absolute;
-  bottom: 54px;
+  bottom: 50px;
   left: 43px;
   
   width: 74px;
@@ -277,7 +280,7 @@ input[type="checkbox"] {
   content: "";
   
   position: absolute;
-  bottom: 54px;
+  bottom: 50px;
   left: 48px;
   
   width: 64px;
@@ -295,6 +298,7 @@ input[type="checkbox"] {
 .features-item-gray {
   min-height: 256px;
   padding: 0 69px;
+  padding-bottom: 40px;
   
   background-color: #eeeeee;
 }
@@ -308,7 +312,7 @@ input[type="checkbox"] {
 }
 
 .offer {
-  padding-top: 55px;
+  padding-top: 52px;
   
   text-align: center;
 }
@@ -412,7 +416,7 @@ input[type="checkbox"] {
 .date-block input {
   width: 346px;
   min-height: 38px;
-  padding: 6px 9px 6px 13px;
+  padding: 6px 35px 6px 13px;
   
   font-size: 14px;
   line-height: 26px;
@@ -624,7 +628,7 @@ input[type="checkbox"] {
   display: block;
   position: relative;
   
-  margin: 3px;
+  margin: 0 3px;
   width: 46px;
   height: 48px;
   
@@ -726,6 +730,7 @@ input[type="checkbox"] {
   
   background-image: url("../img/background-hotels.jpg");
   background-repeat: no-repeat;
+  background-position: 50% 15%;
   background-size: cover;
 }
 
@@ -735,7 +740,7 @@ input[type="checkbox"] {
 
 .filter-form-group {
   margin: 0;
-  margin-top: 25px;
+  margin-top: 27px;
   padding: 0;
   width: 255px;
 }
@@ -842,7 +847,7 @@ input[type="checkbox"] {
 /*Двойной ползунок----------------*/
 .filter-form-container {
   width: 318px;
-  margin-top: 25px;
+  margin-top: 27px;
   margin-left: auto;
 }
 
@@ -852,7 +857,7 @@ input[type="checkbox"] {
 }
 
 .filter-form-cost .filter-form-title {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .cost-range {
@@ -902,8 +907,10 @@ input[type="checkbox"] {
   width: 50px;
   margin: 0;
 
-  color: inherit;
-  font: inherit;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
 
   background: none;
   border: none;
@@ -960,12 +967,12 @@ input[type="checkbox"] {
   align-items: center;
   padding: 0 6%;
   
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .sorting-caption {
-  margin: 31px 0;
-  padding-right: 50px;
+  margin: 30px 0;
+  padding-right: 49px;
   
   font-size: 21px;
   line-height: 26px;
@@ -978,6 +985,8 @@ input[type="checkbox"] {
 }
 
 .sorting-by-caption {
+  padding-right: 5px;
+  
   font-size: 12px;
   line-height: 18px;
 }
@@ -1048,23 +1057,29 @@ input[type="checkbox"] {
 
 .result-item {
   display: flex;
-  align-items: flex-end;
   padding: 30px 6%;
   
   list-style: none;
-  border-bottom: 2px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .result-item-image {
   margin-right: 30px;
-  
-  line-height: 0;
+}
+
+.result-item-image img {
+  display: block;
 }
 
 .result-item-info {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   width: 25%;
+}
+
+.result-item-title {
+  margin: -6px 0 8px;
 }
 
 .result-item-title a{
@@ -1084,18 +1099,16 @@ input[type="checkbox"] {
 }
 
 .result-item-text {
-  width: 50%;
+  width: 116px;
   margin: 0;
+  margin-bottom: 14px;
   padding-right: 10px;
   box-sizing: border-box;
   color: #333333;
 }
 
-.btn-more {
-  padding: 6px 17px;
-  margin-right: 6px;
-  margin-top: 16px;
-  
+.result-btn {
+  padding: 3px 17px;  
   font-size: 14px;
   line-height: 21px;
   font-weight: 700;
@@ -1115,15 +1128,8 @@ input[type="checkbox"] {
   background-color: #5496bd;
 }
 
-.btn-book {
-  padding: 6px 17px;
-  margin-top: 16px;
-
-  
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 700;
-  color: #ffffff;
+.btn-book {  
+  margin-left: 6px;
   
   background-color: #766357;
 }
@@ -1140,12 +1146,39 @@ input[type="checkbox"] {
 }
 
 .result-item-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: auto;
+}
+
+.result-item-stars {
+  align-self: flex-end;
+  width: 106px;
+  height: 17px;
+  background-image: url("../img/star.svg");
+  background-repeat: repeat-x;
+  background-repeat: space;
+}
+
+.four-stars {
+  width: 87px;
+  overflow: hidden;
+}
+
+.three-stars {
+  width: 65px;
+  overflow: hidden;
+}
+
+.two-stars {
+  width: 40px;
+  overflow: hidden;
 }
 
 .result-item-rate {
   margin: 0;
-  padding: 5px 15px;
+  padding: 3px 13px;
   
   color: #666666;
   
