@@ -360,6 +360,10 @@ input[type="checkbox"] {
   position: relative;
 }
 
+.map img{
+  margin-bottom: -5px;
+}
+
 .search-form {
   position: absolute;
   display: flex;
