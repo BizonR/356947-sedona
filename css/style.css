@@ -24,8 +24,7 @@ a {
   text-decoration: none;
 }
 
-.visually-hidden:not(:focus):not(:active),
-input[type="checkbox"] {
+.visually-hidden:not(:focus):not(:active) {
   position: absolute;
 
   width: 1px;
@@ -72,6 +71,9 @@ input[type="checkbox"] {
   top: 0;
   left: 50%;
   
+  width: 138px;
+  height: 70px;
+  
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -81,6 +83,8 @@ input[type="checkbox"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -95,26 +99,24 @@ input[type="checkbox"] {
   padding: 15px 0;
 }
 
-.site-navigation li:nth-child(2) {
-  margin-right: 20%;
+.site-navigation li:nth-child(4n+1),
+.site-navigation li:nth-child(4n+2) {
+	text-align: left;
+	margin-right: 3%;
 }
 
-.site-navigation li:nth-child(1), 
-.site-navigation li:nth-child(2) {
-  text-align: left;
+.site-navigation li:nth-child(4n+3),
+.site-navigation li:nth-child(4n+4) {
+	text-align: right;
+	margin-left: 3%;
 }
 
-.site-navigation li:nth-child(3), 
-.site-navigation li:nth-child(4) {
-  text-align: right;
+.site-navigation li:nth-child(4n+2) {
+	margin-right: 14%;
 }
 
-.shift-right {
-  margin-left: 60px;
-}
-
-.shift-left {
-  margin-right: 63px;
+.site-navigation li:nth-child(4n+3) {
+	margin-left: 0;
 }
 
 .site-navigation a {
@@ -204,6 +206,8 @@ input[type="checkbox"] {
 }  
 
 .features-item {
+  z-index: 1;
+  
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 400px;
@@ -315,7 +319,7 @@ input[type="checkbox"] {
   color: #333333;
 }
 
-.features-item-gray {
+.features-item-gray {  
   min-height: 256px;
   padding: 0 69px;
   padding-bottom: 40px;
@@ -332,9 +336,14 @@ input[type="checkbox"] {
 }
 
 .offer {
+  position: relative;
+  z-index: 1;
+  
   padding-top: 52px;
   
   text-align: center;
+  
+  background-color: #ffffff;
 }
 
 .offer-title {
@@ -381,17 +390,30 @@ input[type="checkbox"] {
   position: relative;
 }
 
-.map img{
+.map img {
+  position: absolute;
+  
+  margin-bottom: -5px;
+}
+
+.map iframe {
+  position: relative;
+  
+  width: 100%;
+  height: 593px;
+  
+  border: none;
   margin-bottom: -5px;
 }
 
 .search-form {
   position: absolute;
+  z-index: 0;
   top: 0;
   
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-sizing: border-box;
@@ -406,6 +428,93 @@ input[type="checkbox"] {
   text-transform: uppercase;
   
   background-color: #ffffff;
+}
+
+@-webkit-keyframes swim {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes swim {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+.search-form-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: swim 0.7s;
+          animation: swim 0.7s;
+}
+
+.search-form-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 
 .date-block label {
@@ -449,6 +558,7 @@ input[type="checkbox"] {
 }
 
 .date-block input {
+  
   width: 346px;
   min-height: 38px;
   padding: 6px 35px 6px 13px;
@@ -460,29 +570,27 @@ input[type="checkbox"] {
 }
 
 .form-calendar {
-  padding: 0;
-}
-
-.form-calendar::before {
-  content: "";
-  
   position: absolute;
   top: 8px;
-  right: 9px;
+  left: 428px;
   
-  width: 21px;
-  height: 22px;
+  padding: 0;
   
-  background-image: url("../img/calendar.svg");
+  background-color: transparent;
+  border: none;
 }
 
-.form-calendar:hover::before,
-.form-calendar:focus::before {
-  background-image: url("../img/calendar-hover.svg");
+.form-calendar svg { 
+  fill: #cacaca; 
 }
 
-.form-calendar:active::before {
-  background-image: url("../img/calendar-active.svg")
+.form-calendar:hover svg,
+.form-calendar:focus svg {
+  fill: #000000;
+}
+
+.form-calendar:active svg {
+  fill: #81b3d2;
 }
 
 .search-form .persons-block {
@@ -532,6 +640,9 @@ input[type="checkbox"] {
   width: 38px;
   height: 38px;
   padding: 0;
+  
+  background-color: #f2f2f2;
+  border: none;
 }
 
 .icon-minus::before {
@@ -605,25 +716,6 @@ input[type="checkbox"] {
   color: rgba(255, 255, 255, 0.3);
   
   background-color: #5496bd;
-}
-
-.form-calendar,
-.form-persons-change {
-  font: inherit;
-  color: #cacaca;
-  
-  background-color: #f2f2f2;
-  border: none;
-}
-
-.form-calendar:hover,
-.form-persons-change:hover {
-  color: #000000;
-}
-
-.form-calendar:active,
-.form-persons-change:active {
-  color: #81b3d2;
 }
 
 .index-footer-wrapper,
@@ -833,17 +925,21 @@ input[type="checkbox"] {
 
 .filter-form-option {
   margin-bottom: 25px;
-  padding-left: 40px;
 }
 
 .filter-form-option:last-child {
   margin-bottom: 30px;
 }
 
+.filter-input-checkbox {
+  display: none;
+}
+
 .filter-form-option label {
   position: relative;
   
   display: block;
+  padding-left: 40px;
   
   cursor: pointer;
   -webkit-user-select: none;
@@ -852,17 +948,10 @@ input[type="checkbox"] {
           user-select: none;
 }
 
-.filter-form-option input[type="checkbox"]:focus + .filter-form-label::before {
-  outline: 2px solid;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-
 .filter-input-checkbox:checked + label::before {
   content: "";
   
   position: absolute;
-  left: -40px;
-  top: -2px;
   
   width: 27px;
   height: 23px;
@@ -874,8 +963,8 @@ input[type="checkbox"] {
   content: "";
   
   position: absolute;
-  left: -40px;
-  top: -2px;
+  left: 0;
+  bottom: 0;
   
   width: 23px;
   height: 23px;
