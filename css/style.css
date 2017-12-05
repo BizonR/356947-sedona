@@ -926,7 +926,6 @@ a {
 
 .filter-form-option {
   margin-bottom: 25px;
-  outline: none;
 }
 
 .filter-form-option:last-child {
@@ -940,7 +939,8 @@ a {
 .filter-form-option label {
   position: relative;
   
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   padding-left: 40px;
   
   cursor: pointer;
@@ -982,7 +982,11 @@ a {
   background-image: url("../img/checkbox-on-disabled.svg");
 }
 
-.filter-form-option:focus label::before {
+.filter-form-label {
+  outline: none;
+}
+
+label:focus::before {
   box-shadow: -10px 0px 15px 0 rgba(255,255,255,0.4);
 }
 
@@ -1134,16 +1138,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 6%;
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
+  padding: 30px 6%;
   
   border-bottom: 1px solid #e5e5e5;
 }
 
 .sorting-caption {
-  margin: 30px 0;
+  margin: 0;
   padding-right: 49px;
   
   font-size: 21px;
@@ -1158,6 +1162,8 @@ a {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  width: 77%;
+  padding-top: 4px;
 }
 
 .sorting-by-caption {
@@ -1171,6 +1177,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1208,6 +1215,7 @@ a {
 
 .arrows {  
   margin-left: auto;
+  padding-top: 4px;
 }
 
 .arrow {
