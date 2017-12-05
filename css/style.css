@@ -925,6 +925,7 @@ a {
 
 .filter-form-option {
   margin-bottom: 25px;
+  outline: none;
 }
 
 .filter-form-option:last-child {
@@ -980,9 +981,13 @@ a {
   background-image: url("../img/checkbox-on-disabled.svg");
 }
 
-.btn-filter-form {
+.filter-form-option:focus label::before {
+  box-shadow: -10px 0px 15px 0 rgba(255,255,255,0.4);
+}
+
+.btn-filter-form {  
   display: block;
-  margin: 0 auto;
+  margin-left: 85px;
   padding: 6px 34px;
 
   font-size: 14px;
@@ -1061,7 +1066,7 @@ a {
 
 .cost-range-label {
   width: 85px;
-  padding-left: 65px;
+  padding-left: 64px;
 }
 
 .cost-range-input {
